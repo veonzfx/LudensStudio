@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ludens Studio — Independent Creative Studio.">
+    <meta name="theme-color" content="#E66B3E">
+
+    <title>LUDENS® — Creative Studio</title>
+
+    <link rel="icon" type="image/svg+xml" href="images/icons/LudensLoad.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Notable&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/preloader.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="loader-content">
+            <img src="images/icons/LudensLoad.svg" alt="Ludens Studio">
+        </div>
+    </div>
+
+    <!-- NAVBAR (terkunci di atas) -->
+    <header class="navbar">
+        <a href="#" class="navbar-logo">LUDENS</a>
+        <a href="mailto:hello@ludens.studio" class="navbar-cta">Find Us Here</a>
+    </header>
+
+    <!-- LAYER 1 (paling belakang): logo Sadrajya -->
+    <div class="bg"><img src="images/logos/SadrajyaLM.svg" alt=""></div>
+
+    <!-- LAYER 2: papan board game 3D -->
+    <canvas id="board" aria-hidden="true"></canvas>
+
+    <!-- LAYER 3: teks, berganti per bab mengikuti scroll -->
+    <main class="stage">
+
+        <section class="chapter ch-hero">
+            <p class="label">INDEPENDENT CREATIVE STUDIO — EST. 2026</p>
+            <h1>WE MAKE THINGS MOVE.</h1>
+            <p class="lead">A creative studio exploring ideas, identities and visual experiences.</p>
+            <p class="hint">SCROLL TO EXPLORE ↓</p>
+        </section>
+
+        <section class="chapter">
+            <p class="label">(01) — ABOUT US</p>
+            <h2>IDEAS INTO EXPERIENCES.</h2>
+            <p class="lead">Ludens Studio is an independent creative studio focused on visual communication, creative direction and digital experiences.</p>
+        </section>
+
+        <section class="chapter">
+            <p class="label">(02) — SELECTED WORKS</p>
+            <a href="#" class="work">PROJECT ONE <small>Visual Identity / Art Direction</small></a>
+            <a href="#" class="work">PROJECT TWO <small>Digital Experience / Development</small></a>
+        </section>
+
+        <section class="chapter">
+            <p class="label">(03) — GET IN TOUCH</p>
+            <h2>HAVE AN IDEA IN MIND?</h2>
+            <a href="mailto:hello@ludens.studio" class="cta">LET'S TALK ↗</a>
+            <div class="foot">
+                <span>© 2026 LUDENS STUDIO. ALL RIGHTS RESERVED.</span>
+                <span>INDEPENDENT BY NATURE.</span>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Ruang scroll yang menggerakkan semua animasi -->
+    <div class="scroll"></div>
+
+    <script src="js/preloader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="js/landing.js"></script>
+
+</body>
+</html>
