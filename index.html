@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,20 +13,16 @@
     <!-- FAVICON -->
     <link rel="icon" type="image/svg+xml" href="images/icons/LudensLoad.svg">
 
-   
-   <!-- CSS IMPORT -->
-<style>
-@import url("./css/style.css");
-</style>
-
-    <!-- GOOGLE FONTS (TEMPORARY) -->
+    <!-- GOOGLE FONTS: Notable (logo) + Space Grotesk (teks) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Notable&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- CSS (style.css mengimpor semua file CSS lain) -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="loading">
+<body>
 
     <!-- =================================
          PRELOADER
@@ -35,19 +30,9 @@
 
     <div id="preloader">
         <div class="loader-content">
-            <img
-                src="images/icons/LudensLoad.svg"
-                alt="Ludens Studio"
-            >
+            <img src="images/icons/LudensLoad.svg" alt="Ludens Studio">
         </div>
     </div>
-
-
-    <!-- =================================
-         CUSTOM CURSOR
-    ================================== -->
-
-    <div class="custom-cursor"></div>
 
 
     <!-- =================================
@@ -56,184 +41,150 @@
 
     <main id="website">
 
-        <!-- NAVIGATION -->
+        <!-- NAVIGATION (terkunci di atas) -->
 
         <header class="navbar">
-
-            <a href="#" class="navbar-logo">
-                LUDENS®
-            </a>
-
-            <nav class="navbar-menu">
-                <a href="#about">ABOUT</a>
-                <a href="#works">WORKS</a>
-                <a href="#contact">CONTACT</a>
-            </nav>
-
-            <button class="menu-toggle" aria-label="Toggle navigation">
-                MENU +
-            </button>
-
+            <a href="#home" class="navbar-logo">LUDENS</a>
+            <a href="#contact" class="navbar-cta">Find Us Here</a>
         </header>
 
 
-        <!-- HERO SECTION -->
+        <!-- HERO SECTION
+             Tinggi 400vh = ruang scroll untuk animasi papan 3D.
+             Layer: logo latar (belakang) -> canvas papan 3D (depan). -->
 
         <section class="hero" id="home">
 
-            <div class="hero-content">
-
-                <p class="hero-label">
-                    INDEPENDENT CREATIVE STUDIO — EST. 2026
-                </p>
-
-                <h1>
-                    WE MAKE<br>
-                    THINGS MOVE.
-                </h1>
-
-                <p class="hero-description">
-                    A creative studio exploring ideas,
-                    identities and visual experiences.
-                </p>
-
+            <div class="hero-bg">
+                <img src="images/logos/SadrajyaLM.svg" alt="">
             </div>
+
+            <canvas id="board" aria-hidden="true"></canvas>
 
             <div class="hero-bottom">
-
                 <span>SCROLL TO EXPLORE</span>
-
                 <span>↓</span>
-
             </div>
+
+            <!-- Teks hero lama (belum dipakai di desain terbaru):
+                 INDEPENDENT CREATIVE STUDIO — EST. 2026
+                 WE MAKE THINGS MOVE.
+                 A creative studio exploring ideas, identities and visual experiences. -->
 
         </section>
 
 
-        <!-- ABOUT SECTION -->
+        <!-- KONTEN DI BAWAH HERO (menutupi canvas saat di-scroll) -->
 
-        <section class="about" id="about">
+        <div class="content">
 
-            <div class="section-label">
-                (01) — ABOUT US
-            </div>
+            <!-- ABOUT SECTION -->
 
-            <div class="about-content">
+            <section class="about" id="about">
+
+                <div class="section-label">(01) — ABOUT US</div>
+
+                <div class="about-content">
+                    <h2>
+                        IDEAS INTO<br>
+                        EXPERIENCES.
+                    </h2>
+
+                    <p>
+                        Ludens Studio is an independent creative
+                        studio focused on visual communication,
+                        creative direction and digital experiences.
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- WORKS SECTION -->
+
+            <section class="works" id="works">
+
+                <div class="section-label">(02) — SELECTED WORKS</div>
+
+                <div class="works-content">
+
+                    <article class="work-item">
+                        <div class="work-image">
+                            <!-- PROJECT IMAGE -->
+                        </div>
+                        <h3>PROJECT ONE</h3>
+                        <p>Visual Identity / Art Direction</p>
+                    </article>
+
+                    <article class="work-item">
+                        <div class="work-image">
+                            <!-- PROJECT IMAGE -->
+                        </div>
+                        <h3>PROJECT TWO</h3>
+                        <p>Digital Experience / Development</p>
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- CONTACT SECTION -->
+
+            <section class="contact" id="contact">
+
+                <div class="section-label">(03) — GET IN TOUCH</div>
 
                 <h2>
-                    IDEAS INTO<br>
-                    EXPERIENCES.
+                    HAVE AN<br>
+                    IDEA IN MIND?
                 </h2>
 
-                <p>
-                    Ludens Studio is an independent creative
-                    studio focused on visual communication,
-                    creative direction and digital experiences.
-                </p>
+                <a href="mailto:hello@ludens.studio">LET'S TALK ↗</a>
 
-            </div>
-
-        </section>
+            </section>
 
 
-        <!-- WORKS SECTION -->
+            <!-- FOOTER -->
 
-        <section class="works" id="works">
+            <footer class="footer">
 
-            <div class="section-label">
-                (02) — SELECTED WORKS
-            </div>
+                <div class="footer-top">
+                    <div class="footer-brand">LUDENS®</div>
 
-            <div class="works-content">
-
-                <article class="work-item">
-                    <div class="work-image">
-                        <!-- PROJECT IMAGE -->
+                    <div class="footer-links">
+                        <a href="#home">HOME</a>
+                        <a href="#about">ABOUT</a>
+                        <a href="#works">WORKS</a>
+                        <a href="#contact">CONTACT</a>
                     </div>
-
-                    <h3>PROJECT ONE</h3>
-                    <p>Visual Identity / Art Direction</p>
-                </article>
-
-                <article class="work-item">
-                    <div class="work-image">
-                        <!-- PROJECT IMAGE -->
-                    </div>
-
-                    <h3>PROJECT TWO</h3>
-                    <p>Digital Experience / Development</p>
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- CONTACT SECTION -->
-
-        <section class="contact" id="contact">
-
-            <div class="section-label">
-                (03) — GET IN TOUCH
-            </div>
-
-            <h2>
-                HAVE AN<br>
-                IDEA IN MIND?
-            </h2>
-
-            <a href="mailto:hello@ludens.studio">
-                LET'S TALK ↗
-            </a>
-
-        </section>
-
-
-        <!-- FOOTER -->
-
-        <footer class="footer">
-
-            <div class="footer-top">
-
-                <div class="footer-brand">
-                    LUDENS®
                 </div>
 
-                <div class="footer-links">
-                    <a href="#home">HOME</a>
-                    <a href="#about">ABOUT</a>
-                    <a href="#works">WORKS</a>
-                    <a href="#contact">CONTACT</a>
+                <div class="footer-bottom">
+                    <span>© 2026 LUDENS STUDIO. ALL RIGHTS RESERVED.</span>
+                    <span>INDEPENDENT BY NATURE.</span>
                 </div>
 
-            </div>
+            </footer>
 
-            <div class="footer-bottom">
-
-                <span>
-                    © 2026 LUDENS STUDIO. ALL RIGHTS RESERVED.
-                </span>
-
-                <span>
-                    INDEPENDENT BY NATURE.
-                </span>
-
-            </div>
-
-        </footer>
+        </div>
 
     </main>
 
 
     <!-- =================================
          JAVASCRIPT
+         Urutan: preloader -> library -> hero
     ================================== -->
 
     <script src="js/preloader.js"></script>
-    <script src="js/cursor.js"></script>
-    <script src="js/smooth-scroll.js"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/interactions.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+
+    <script src="js/hero.js"></script>
 
 </body>
 </html>

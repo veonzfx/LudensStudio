@@ -1,0 +1,93 @@
+
+/* ========================================
+   LUDENS STUDIO — PRELOADER
+======================================== */
+
+:root {
+    --loader-background: #E66B3E;
+    --loader-duration: 1.8s;
+}
+
+body.loading {
+    overflow: hidden;
+}
+
+/* PRELOADER SCREEN */
+
+#preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    width: 100%;
+    height: 100%;
+    height: 100svh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--loader-background);
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity 0.8s cubic-bezier(0.76, 0, 0.24, 1),
+        visibility 0.8s ease;
+}
+
+/* LOGO CONTAINER */
+
+.loader-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* LOGO */
+
+.loader-content img {
+    display: block;
+
+    width: clamp(55px, 8vw, 100px);
+    height: auto;
+
+    object-fit: contain;
+
+    animation: ludensRotate 2s linear infinite;
+    will-change: transform;
+}
+
+/* ROTATION */
+
+@keyframes ludensRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* LOADING COMPLETE */
+
+#preloader.loaded {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    .loader-content img {
+        animation-duration: 8s;
+    }
+
+    #preloader {
+        transition-duration: 0.2s;
+    }
+}
+
