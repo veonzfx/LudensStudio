@@ -1,1 +1,0 @@
-Taruh CreatoDisplay-Bold.woff2 (atau .otf) di folder ini. Nama file harus persis sama (huruf besar/kecil).
